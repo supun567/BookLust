@@ -1,0 +1,18 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Lobster&family=Pacifico&family=Roboto:ital,wght@0,300;1,400&display=swap");
+
+.navbar-brand {
+  font-family: "Pacifico", cursive;
+  font-size: 40px;
+}
+*/
+
+/* You have to import the font family and have to to apply font family to element as required 1a237e*/
+gradient {
+  background: rgb(13, 89, 138);
+  background: linear-gradient(
+    90deg,
+    rgba(13, 89, 138, 1) 0%,
+    rgba(31, 31, 231, 1) 38%,
+    rgba(0, 212, 255, 1) 94%
+  );
+}

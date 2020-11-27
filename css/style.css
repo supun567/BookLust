@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
+html,
+body {
+  height: 100%;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  min-width: 364px;
+}
+#collapNavbar {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  margin-right: 1em !important;
+}
+
+.navbar-collaps {
+  justify-content: flex-end;
+}
+
+.gradient {
+  background: rgb(31, 31, 213);
+  background: linear-gradient(
+    90deg,
+    rgba(31, 31, 213, 1) 38%,
+    rgba(0, 212, 255, 1) 94%
+  );
+}
+
+.page-header {
+  margin-top: 4rem;
+  font-size: 1.25rem;
+  color: white;
+}
+
+.inner {
+  overflow: hidden;
+}
+
+.inner img {
+  transition: all 1s ease;
+}
+
+.inner:hover img {
+  transform: scale(1.2);
+}
+
+.contact {
+  color: white;
+}
+
+.newbooks {
+  color: white;
+}
+
+.card {
+  color: rgb(6, 6, 68);
+}
+
+#catalog {
+  color: rgb(6, 6, 68);
+}
+
+.form-container {
+  position: absolute;
+  top: 15vh;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px #000;
+}
+
+.nav-item.active .nav-link,
+.navbar-nav .nav-item:hover .nav-link {
+  color: rgb(6, 6, 68);
+}
+/* .form-control {
+  display: block;
+}
+.form-control input {
+  display: block;
+}
+
+.form-control label {
+  padding-top: 10px;
+}
+
+.form-control small {
+  position: absolute;
+  visibility: hidden;
+}
+
+.form-control.success input {
+  border-color: #2ecc71;
+} */
+
+.form-container #username-error,
+.form-container #password-error {
+  color: #b22222;
+  background-color: #ffcccb;
+  text-align: center;
+  visibility: hidden;
+}
+
+.bg {
+  min-width: 350px;
+  justify-content: center;
+}
