@@ -36,6 +36,7 @@ body {
     rgba(31, 31, 213, 1) 38%,
     rgba(0, 212, 255, 1) 94%
   );
+  color: white;
 }
 
 .page-header {
@@ -85,25 +86,6 @@ body {
 .navbar-nav .nav-item:hover .nav-link {
   color: rgb(6, 6, 68);
 }
-/* .form-control {
-  display: block;
-}
-.form-control input {
-  display: block;
-}
-
-.form-control label {
-  padding-top: 10px;
-}
-
-.form-control small {
-  position: absolute;
-  visibility: hidden;
-}
-
-.form-control.success input {
-  border-color: #2ecc71;
-} */
 
 .form-container #username-error,
 .form-container #password-error {
