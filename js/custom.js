@@ -1,27 +1,25 @@
-const frm = document.getElementById("loginForm");
-// var username = document.forms["loginForm"]["username"];
-// var password = document.forms["loginForm"]["password"];
-
-// const username = document.getElementById("username");
-// const password = document.getElementById("password");
-
-// Get Error div
-// const unameError = document.getElementById("username-error");
-// var pwError = document.getElementById("password-error");
+const frm = document.getElementById("addbooks");
 
 function validateUser(frm) {
   var uname = frm.username.value;
-  const pword = frm.password.value;
+  var pword = frm.password.value;
 
-  const unameError = frm.getElementById("username-error");
-
-  document.write(uname.value);
+  var msg = document.getElementById("errormsg");
 
   if (uname.length == 0) {
-    unameError.style.border = "1px solid red";
-    unameError.style.display = "block";
     username.focus();
     event.preventDefault();
+    return false;
+  } else if (pword.length == 0) {
+    pname.focus();
+    event.preventDefault();
+    return false;
+  } else if (uname == "user" || pword == "pass") {
+    document.write("Authenticated");
+    return true;
+  } else {
+    document.write("Authentication Failed");
+    return false;
   }
 }
 
