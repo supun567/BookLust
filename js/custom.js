@@ -1,27 +1,30 @@
-const frm = document.getElementById("loginForm");
-// var username = document.forms["loginForm"]["username"];
-// var password = document.forms["loginForm"]["password"];
+const frm = document.getElementById("addbooks");
+let unamedefault = "user";
+let pworddefault = "pass";
 
-// const username = document.getElementById("username");
-// const password = document.getElementById("password");
+function validateUser() {
+  var uname = document.getElementById("username").value;
+  var pword = document.getElementById("password").value;
 
-// Get Error div
-// const unameError = document.getElementById("username-error");
-// var pwError = document.getElementById("password-error");
-
-function validateUser(frm) {
-  var uname = frm.username.value;
-  const pword = frm.password.value;
-
-  const unameError = frm.getElementById("username-error");
-
-  document.write(uname.value);
+  var msg = document.getElementById("errormsg");
 
   if (uname.length == 0) {
-    unameError.style.border = "1px solid red";
-    unameError.style.display = "block";
     username.focus();
+    document.getElementById("username").style.border = "3px solid red";
+    return false;
+  } else if (pword.length == 0) {
+    pname.focus();
+    document.getElementById("password").style.border = "3px solid red";
+    return false;
+  } else if (uname == "user" || pword == "pass") {
+    document.getElementById("login").value = "Log Out";
+    document.getElementById("errormsg").style.color = "green";
+    document.getElementById("errormsg").innerHTML =
+      "Logged in, Log out when you are done";
+    return true;
     event.preventDefault();
+  } else {
+    return false;
   }
 }
 

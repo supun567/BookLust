@@ -40,13 +40,15 @@
         </div>
         <div class="row align-items-center justify-content-center">
           <div class="col-12">
-            <form>
+            <form onsubmit="return validateUser()">
               <div class="form-row">
                 <div class="col-md-5 mb-2">
                   <input
                     type="text"
                     class="form-control"
                     placeholder="Username"
+                    id="username"
+                    name="username"
                   />
                 </div>
                 <div class="col-md-5 mb-2">
@@ -54,12 +56,17 @@
                     type="password"
                     class="form-control"
                     placeholder="password"
+                    id="password"
+                    name="password"
                   />
                 </div>
                 <div class="col-md-2">
-                  <button type="submit" class="btn btn-outline-warning">
-                    Log In
-                  </button>
+                  <input
+                    type="submit"
+                    class="btn btn-outline-warning"
+                    value="Log In"
+                    id="login"
+                  />
                 </div>
               </div>
             </form>
@@ -78,12 +85,14 @@
     <!-- Details Section -->
     <div class="container">
       <div class="row align-items-center justify-content-center">
-        <div class="col-md-12 text-center" id="logMessage">
-          <h4>You are not logged in currently. log in to continue!!!</h4>
+        <div class="col-md-12 text-center errormsg">
+          <h4 class="errormsg" id="errormsg">
+            You are not logged in currently. log in to continue!!!
+          </h4>
         </div>
       </div>
       <div class="row my-3 align-items-center justify-content-center">
-        <form>
+        <form id="addbooks" name="addbooks">
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="bookname">Book Name</label>
@@ -142,8 +151,9 @@
               </select>
             </div>
           </div>
-
-          <button type="submit" class="btn btn-warning">Add Details</button>
+          <div class="row align-items-center justify-content-center">
+            <button type="submit" class="btn btn-warning">Add Details</button>
+          </div>
         </form>
       </div>
     </div>

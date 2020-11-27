@@ -99,3 +99,7 @@ body {
   min-width: 350px;
   justify-content: center;
 }
+
+.errormsg {
+  color: red;
+}
