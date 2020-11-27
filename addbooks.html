@@ -38,34 +38,30 @@
             <h2>Add Books</h2>
           </div>
         </div>
-        <div
-          class="row justify-content-center align-items-center"
-          id="inlineitems"
-        >
-          <div class="col-sm-12 col-md-10 col-lg-8">
-            <form class="form-inline">
-              <div class="form-group mb-2 mx-1">
-                <label for="staticEmail2" class="sr-only">Username</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="username"
-                  value="username"
-                  placeholder="Username"
-                />
+        <div class="row align-items-center justify-content-center">
+          <div class="col-12">
+            <form>
+              <div class="form-row">
+                <div class="col-md-5 mb-2">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Username"
+                  />
+                </div>
+                <div class="col-md-5 mb-2">
+                  <input
+                    type="password"
+                    class="form-control"
+                    placeholder="password"
+                  />
+                </div>
+                <div class="col-md-2">
+                  <button type="submit" class="btn btn-outline-warning">
+                    Log In
+                  </button>
+                </div>
               </div>
-              <div class="form-group ml-1 mr-3 mb-2">
-                <label for="password" class="sr-only">Password</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  id="password"
-                  placeholder="Password"
-                />
-              </div>
-              <button type="submit" class="btn btn-outline-warning mb-2">
-                Log In
-              </button>
             </form>
           </div>
         </div>
@@ -81,7 +77,75 @@
 
     <!-- Details Section -->
     <div class="container">
-      <div class="row"></div>
+      <div class="row align-items-center justify-content-center">
+        <div class="col-md-12 text-center" id="logMessage">
+          <h4>You are not logged in currently. log in to continue!!!</h4>
+        </div>
+      </div>
+      <div class="row my-3 align-items-center justify-content-center">
+        <form>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="bookname">Book Name</label>
+              <input type="text" class="form-control" id="bookname" required />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="Author">Author</label>
+              <input type="text" class="form-control" id="author" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="Description">Description</label>
+            <textarea
+              class="form-control"
+              id="Description"
+              rows="5"
+              required
+            ></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="Price">Price</label>
+              <input type="text" class="form-control" id="price" required />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="isbn">ISBN</label>
+              <input
+                type="text"
+                class="form-control"
+                id="isbn"
+                placeholder="Ex: 978-3-16-148410-0"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-8">
+              <label for="Genre">Genre</label>
+              <select id="Genre" class="form-control">
+                <option selected>Action and adventure</option>
+                <option>Biography</option>
+                <option>Comic book</option>
+                <option>Encyclopedia</option>
+                <option>Horror/Mystery</option>
+                <option>Poetry</option>
+                <option>Science</option>
+                <option>Sports and leisure</option>
+              </select>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="Type">Type</label>
+              <select id="type" class="form-control">
+                <option selected>New Arrival</option>
+                <option>Trending</option>
+                <option>Old</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-warning">Add Details</button>
+        </form>
+      </div>
     </div>
   </body>
 </html>
