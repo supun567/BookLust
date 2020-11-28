@@ -40,7 +40,7 @@
     ></script>
   </head>
 
-  <body>
+  <body onload="getData()">
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <div class="container">
@@ -122,31 +122,20 @@
           <table
             data-toggle="table"
             data-pagination="true"
-            data-search="true"
             id="catalog"
+            class="table table-striped table-bordered"
           >
             <thead>
               <tr>
-                <th data-sortable="true" data-field="bName">Title</th>
-                <th data-field="bAuthor">Author</th>
-                <th data-field="bDescription">Description</th>
-                <th data-sortable="true" data-field="bPrice">Price</th>
-                <th data-field="bISBN">ISBN</th>
-                <th data-sortable="true" data-field="bGenre">Genre</th>
-                <th data-sortable="true" data-field="bType">Type</th>
+                <th class="th-sm" data-field="bName">Title</th>
+                <th class="th-sm" data-field="bAuthor">Author</th>
+                <th class="th-sm" data-field="bDescription">Description</th>
+                <th class="th-sm" data-field="bPrice">Price</th>
+                <th class="th-sm" data-field="bISBN">ISBN</th>
+                <th class="th-sm" data-field="bGenre">Genre</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-                <td>4</td>
-                <td>5</td>
-                <td>6</td>
-                <td>7</td>
-              </tr>
-            </tbody>
+            <tbody id="catalogBody"></tbody>
           </table>
         </div>
       </div>
@@ -184,28 +173,29 @@
             querySnapshot.forEach(function (doc) {
               // doc.data() is never undefined for query doc snapshots
               console.log(doc.id, " => ", doc.data());
+              console.log(doc.data().bName);
+
+              // Adding new table rows for each item
+              $("#catalogBody").append(
+                "<tr><td>" +
+                  doc.data().bName +
+                  "</td><td> " +
+                  doc.data().bAuthor +
+                  "</td><td>" +
+                  doc.data().bDescription +
+                  "</td><td> " +
+                  doc.data().bPrice +
+                  "</td><td>" +
+                  doc.data().bISBN +
+                  "</td><td>" +
+                  doc.data().bGenre +
+                  " </td></tr>"
+              );
             });
           })
           .catch(function (error) {
             console.error("Error adding document: ", error);
           });
-
-        // db.collection("books")
-        //   .add({
-        //     bName: document.getElementById("bookname").value.trim(),
-        //     bAuthor: document.getElementById("author").value.trim(),
-        //     bDescription: document.getElementById("description").value.trim(),
-        //     bPrice: document.getElementById("price").value.trim(),
-        //     bISBN: document.getElementById("isbn").value.trim(),
-        //     bGenre: document.getElementById("genre").value.trim(),
-        //     bType: document.getElementById("type").value.trim(),
-        //   })
-        //   .then(function (docRef) {
-        //     console.log("Document written with ID: ", docRef.id);
-        //   })
-        //   .catch(function (error) {
-        //     console.error("Error adding document: ", error);
-        //   });
       }
     </script>
   </body>
