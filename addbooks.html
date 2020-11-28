@@ -84,6 +84,16 @@
       </svg>
     </div>
 
+    <!-- Test Section -->
+    <!-- <div class="container">
+      <div class="row">
+        srNo<input type="text" id="srno" /><br /><br />
+        Name<input type="text" id="bukname" /><br /><br />
+        Author<input type="text" id="bukauthor" /><br /><br />
+        <button id="add" onclick="writeData()">ADD Details</button>
+      </div>
+    </div> -->
+
     <!-- Details Section -->
     <div class="container">
       <div class="row my-3 align-items-center justify-content-center">
@@ -108,7 +118,7 @@
               <label for="Description">Description</label>
               <textarea
                 class="form-control"
-                id="Description"
+                id="description"
                 rows="5"
                 required
               ></textarea>
@@ -138,7 +148,7 @@
             <div class="form-row">
               <div class="form-group col-md-8">
                 <label for="Genre">Genre</label>
-                <select id="Genre" class="form-control">
+                <select id="genre" class="form-control">
                   <option selected>Action and adventure</option>
                   <option>Biography</option>
                   <option>Comic book</option>
@@ -159,7 +169,12 @@
               </div>
             </div>
             <div class="row align-items-center justify-content-center">
-              <button type="submit" class="btn btn-warning">Add Details</button>
+              <input
+                type="button"
+                value="Add Details"
+                class="btn btn-warning"
+                onclick="writeData()"
+              />
             </div>
           </form>
         </fieldset>
@@ -173,5 +188,65 @@
       crossorigin="anonymous"
     ></script>
     <script src="./js/custom.js"></script>
+
+    <!-- Firebase Setup -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.1.1/firebase-app.min.js"
+      integrity="sha512-IUK2Oz9upp47fk1QFxuMNvqbpB+PBpO1I9V5+hNL0KqitBdIaEXhy2zSPGVGltzKKqK5f0L0P3zqafKa7kf8Qw=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.1.1/firebase-database.min.js"
+      integrity="sha512-V/yK7bhXghJO7aNG8iroxcrMdU1JIKhQnk8KKWxiD3+qa44Mwzid50MaJdYcVoGqJNYek38ePv23qIKKiN817g=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.1.1/firebase-analytics.min.js"
+      integrity="sha512-I3Xtm9qS1nuJkElx7PUhXRWuV1+aPMRHtx3m3tsN93C4KQJcceSkCJjpiWytA0hTOkvjXayoYGl2tNCQX1nL1w=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Add Firebase products that you want to use -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.1.1/firebase-auth.min.js"
+      integrity="sha512-34UI3qp0j83ALQB1cQtCb34OBQKqkWgl6AmM1y0olRJzxB1tJBs/4YI9NPAQP25HJpFt8GgjZ8blQltumXNfMw=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.1.1/firebase-firestore.min.js"
+      integrity="sha512-D0jUM6G/75Fw7ihlen91+V6lmoR416c1Wm0Q+I2r4ylrZKsjyhjz/kizO08trRWKscRhUexEpLKdxP+1t2TvjQ=="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      firebase.initializeApp({
+        apiKey: "AIzaSyBxIIu7gfBqen_rrU_Njz-Rln2Qd4ikm4I",
+        authDomain: "booklust-6dcb9.firebaseapp.com",
+        projectId: "booklust-6dcb9",
+      });
+
+      function writeData() {
+        var db = firebase.firestore();
+
+        db.collection("books")
+          .add({
+            bName: document.getElementById("bookname").value.trim(),
+            bAuthor: document.getElementById("author").value.trim(),
+            bDescription: document.getElementById("description").value.trim(),
+            bPrice: document.getElementById("price").value.trim(),
+            bISBN: document.getElementById("isbn").value.trim(),
+            bGenre: document.getElementById("genre").value.trim(),
+            bType: document.getElementById("type").value.trim(),
+          })
+          .then(function (docRef) {
+            console.log("Document written with ID: ", docRef.id);
+          })
+          .catch(function (error) {
+            console.error("Error adding document: ", error);
+          });
+      }
+    </script>
   </body>
 </html>
