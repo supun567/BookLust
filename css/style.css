@@ -100,6 +100,6 @@ body {
   justify-content: center;
 }
 
-.errormsg {
+#statusmsg {
   color: red;
 }
