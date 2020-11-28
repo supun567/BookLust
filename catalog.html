@@ -21,6 +21,23 @@
       integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
       crossorigin="anonymous"
     />
+    <!--Bootstrap table css  -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.css"
+    />
+
+    <!-- Firebase SDKs -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.1.1/firebase-app.min.js"
+      integrity="sha512-IUK2Oz9upp47fk1QFxuMNvqbpB+PBpO1I9V5+hNL0KqitBdIaEXhy2zSPGVGltzKKqK5f0L0P3zqafKa7kf8Qw=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.1.1/firebase-firestore.min.js"
+      integrity="sha512-D0jUM6G/75Fw7ihlen91+V6lmoR416c1Wm0Q+I2r4ylrZKsjyhjz/kizO08trRWKscRhUexEpLKdxP+1t2TvjQ=="
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
@@ -99,8 +116,40 @@
     </div>
 
     <!-- Full Catalog Section -->
-    <div class="container">
-      <div class="row my-3 align-items-center justify-content-center"></div>
+    <div class="container-fluid">
+      <div class="row my-3 align-items-center justify-content-center">
+        <div class="div col-12">
+          <table
+            data-toggle="table"
+            data-pagination="true"
+            data-search="true"
+            id="catalog"
+          >
+            <thead>
+              <tr>
+                <th data-sortable="true" data-field="bName">Title</th>
+                <th data-field="bAuthor">Author</th>
+                <th data-field="bDescription">Description</th>
+                <th data-sortable="true" data-field="bPrice">Price</th>
+                <th data-field="bISBN">ISBN</th>
+                <th data-sortable="true" data-field="bGenre">Genre</th>
+                <th data-sortable="true" data-field="bType">Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
 
     <!--JQuery and bootstrap Scripts + Custom Script-->
@@ -111,5 +160,53 @@
       crossorigin="anonymous"
     ></script>
     <script src="./js/custom.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.js"></script>
+    <!-- Latest compiled and minified Locales -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.18.0/locale/bootstrap-table-en-US.min.js"
+      integrity="sha512-t6Sh/zpgdIfOQu4/mH8QUhK85SIU6t6pOI5eGcgHugj6k4m5S2tb96X6GKKa7b4fR9nV0tPOVpqbwPU6gaT6vQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      firebase.initializeApp({
+        apiKey: "AIzaSyBxIIu7gfBqen_rrU_Njz-Rln2Qd4ikm4I",
+        authDomain: "booklust-6dcb9.firebaseapp.com",
+        projectId: "booklust-6dcb9",
+      });
+
+      function getData() {
+        var db = firebase.firestore();
+
+        db.collection("books")
+          .get()
+          .then(function (querySnapshot) {
+            querySnapshot.forEach(function (doc) {
+              // doc.data() is never undefined for query doc snapshots
+              console.log(doc.id, " => ", doc.data());
+            });
+          })
+          .catch(function (error) {
+            console.error("Error adding document: ", error);
+          });
+
+        // db.collection("books")
+        //   .add({
+        //     bName: document.getElementById("bookname").value.trim(),
+        //     bAuthor: document.getElementById("author").value.trim(),
+        //     bDescription: document.getElementById("description").value.trim(),
+        //     bPrice: document.getElementById("price").value.trim(),
+        //     bISBN: document.getElementById("isbn").value.trim(),
+        //     bGenre: document.getElementById("genre").value.trim(),
+        //     bType: document.getElementById("type").value.trim(),
+        //   })
+        //   .then(function (docRef) {
+        //     console.log("Document written with ID: ", docRef.id);
+        //   })
+        //   .catch(function (error) {
+        //     console.error("Error adding document: ", error);
+        //   });
+      }
+    </script>
   </body>
 </html>
