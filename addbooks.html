@@ -49,6 +49,9 @@
             <li class="nav-item">
               <a class="nav-link" href="./index.html">Home</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./catalog.html">Go To Catalog</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -245,6 +248,37 @@
       </div>
     </footer>
 
+    <!-- Modal Success -->
+    <div
+      class="modal fade"
+      id="successModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="successModalTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Success!!!</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Record Successfully Inserted. Check the Catalog to View Full
+              Details
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
     <!--JQuery and bootstrap Scripts + Custom Script-->
     <script src="/js/jquery.min.js"></script>
     <script
@@ -319,7 +353,11 @@
               bType: document.getElementById("type").value.trim(),
             })
             .then(function (docRef) {
-              alert("Document written with ID: ", docRef.id);
+              // alert("Document written with ID: " + docRef.id); Displaying a modal
+              $(document).ready(function () {
+                $("#successModal").modal("show");
+              });
+
               this.document.getElementById("addbooks").reset();
             })
             .catch(function (error) {

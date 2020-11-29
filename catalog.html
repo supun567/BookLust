@@ -126,21 +126,21 @@
     <!-- Full Catalog Section -->
     <div class="container-fluid">
       <div class="row my-3 align-items-center justify-content-center">
-        <div class="div col-12">
+        <div class="col-12 table-responsive">
           <table
             data-toggle="table"
             data-pagination="true"
             id="catalog"
-            class="table table-striped table-bordered"
+            class="table table-hover table-condensed table-bordered"
           >
             <thead>
               <tr>
                 <th class="th-sm" data-field="bName">Title</th>
                 <th class="th-sm" data-field="bAuthor">Author</th>
-                <th class="th-sm" data-field="bDescription">Description</th>
                 <th class="th-sm" data-field="bPrice">Price</th>
                 <th class="th-sm" data-field="bISBN">ISBN</th>
                 <th class="th-sm" data-field="bGenre">Genre</th>
+                <th class="th-sm" data-field="bView">Read More</th>
               </tr>
             </thead>
             <tbody id="catalogBody"></tbody>
@@ -187,14 +187,12 @@
                   "</td><td> " +
                   doc.data().bAuthor +
                   "</td><td>" +
-                  doc.data().bDescription +
-                  "</td><td> " +
                   doc.data().bPrice +
                   "</td><td>" +
                   doc.data().bISBN +
                   "</td><td>" +
                   doc.data().bGenre +
-                  " </td></tr>"
+                  '</td><td class="text-center"><button class="btn btn-warning btn-sm">More..</button></td></tr>'
               );
             });
           })

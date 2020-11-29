@@ -62,4 +62,4 @@ function loginUser() {
   }
 }
 
-// Script to scroll to top
+// Display Modal
