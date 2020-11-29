@@ -42,13 +42,13 @@
 
   <body onload="getData()">
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-custom">
       <div class="container">
-        <a class="navbar-brand" href="index.html"
-          ><img src="./images/logo1.png" style="width: 100px; height: 30px"
+        <a class="navbar-brand" href="./index.html"
+          ><img src="./images/logo1.png" style="width: 120px; height: 30px"
         /></a>
         <button
-          class="navbar-toggler"
+          class="navbar-toggler custom-toggler"
           type="button"
           data-toggle="collapse"
           data-target="#navbarSupportedContent"
@@ -63,8 +63,8 @@
           id="navbarSupportedContent"
         >
           <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#home">Home</a>
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">Home</a>
             </li>
             <li class="nav-item dropdown">
               <a
@@ -79,18 +79,20 @@
                 Books
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="trending.html">Trending</a>
-                <a class="dropdown-item" href="newarrivals.html"
+                <a class="dropdown-item active" href="./trending.html"
+                  >Trending</a
+                >
+                <a class="dropdown-item" href="./newarrivals.html"
                   >New Arrivals</a
                 >
-                <a class="dropdown-item" href="catalog.html">Full Catalog</a>
+                <a class="dropdown-item" href="./catalog.html">Full Catalog</a>
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contactus.html">Contact Us</a>
+              <a class="nav-link" href="./contactus.html">Contact Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="addbooks.html">Admin Login</a>
+              <a class="nav-link" href="./addbooks.html">Admin Login</a>
             </li>
           </ul>
         </div>
@@ -98,11 +100,11 @@
     </nav>
 
     <!-- Top Wave -->
-    <div class="gradient mt-5">
+    <div class="gradient">
       <div class="container pt-4 text-center">
         <div class="row align-items-center justify-content-center">
           <div class="col-12 mb-4">
-            <h2>Some books sell fast, so HURRY UP!!!!</h2>
+            <h2>Some Books Sell Fast, so HURRY UP!!!!</h2>
           </div>
         </div>
       </div>
@@ -141,6 +143,49 @@
       </div>
     </div>
 
+    <!-- Footer Section -->
+    <footer class="">
+      <div class="container-fluid text-center">
+        <div class="row">
+          <div class="col-12">
+            <!-- Social buttons -->
+            <div class="text-center center-block">
+              <p class="txt-railway">Connect With Us</p>
+              <a href="#"
+                ><i
+                  id="social-fb"
+                  class="fa fa-facebook-square fa-3x social"
+                ></i
+              ></a>
+              <a href="#"
+                ><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i
+              ></a>
+              <a href="#"
+                ><i
+                  id="social-gp"
+                  class="fa fa-google-plus-square fa-3x social"
+                ></i
+              ></a>
+              <a href="#contact"
+                ><i
+                  id="social-em"
+                  class="fa fa-envelope-square fa-3x social"
+                ></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-12">
+            <p class="text-muted">
+              Modern Web Application Development - SLIIT - Final Assignment -
+              MWAD20010002 - SH KANDAUDAHEWA
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
     <!--JQuery and bootstrap Scripts + Custom Script-->
     <script src="/js/jquery.min.js"></script>
     <script
@@ -148,7 +193,7 @@
       integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
       crossorigin="anonymous"
     ></script>
-    <script src="./js/custom.js"></script>
+
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.js"></script>
     <!-- Latest compiled and minified Locales -->
@@ -172,10 +217,6 @@
           .get()
           .then(function (querySnapshot) {
             querySnapshot.forEach(function (doc) {
-              // doc.data() is never undefined for query doc snapshots
-              console.log(doc.id, " => ", doc.data());
-              console.log(doc.data().bName);
-
               // Adding new table rows for each item
               $("#catalogBody").append(
                 "<tr><td>" +
@@ -199,5 +240,13 @@
           });
       }
     </script>
+
+    <!-- Loading Custom.js file -->
+    <script src="./js/custom.js"></script>
+
+    <!-- Scroll Top Button Code -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <script type="text/javascript" src="./js/scrollTop.js"></script>
+    <!-- End of Scroll Top -->
   </body>
 </html>

@@ -35,7 +35,7 @@ function loginUser() {
       document.getElementById("password").style.border = "none";
       document.getElementById("errormsg").innerHTML = "Username cant be blank";
       return false;
-    } else if (uname == "user" && pword == "pass") {
+    } else if (uname == "bookadmin" && pword == "pwdadmin") {
       document.getElementById("login").value = "Log Out"; // Successfully Logged in
       document.getElementById("username").style.border = "none";
       document.getElementById("password").style.border = "none";
@@ -61,3 +61,5 @@ function loginUser() {
     }
   }
 }
+
+// Script to scroll to top

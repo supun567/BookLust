@@ -25,13 +25,13 @@
   </head>
   <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-custom">
       <div class="container">
-        <a class="navbar-brand" href="#home"
-          ><img src="./images/logo1.png" style="width: 100px; height: 30px"
+        <a class="navbar-brand" href="./index.html"
+          ><img src="./images/logo1.png" style="width: 120px; height: 30px"
         /></a>
         <button
-          class="navbar-toggler"
+          class="navbar-toggler custom-toggler"
           type="button"
           data-toggle="collapse"
           data-target="#navbarSupportedContent"
@@ -47,7 +47,7 @@
         >
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="#home">Home</a>
+              <a class="nav-link" href="./index.html">Home</a>
             </li>
             <li class="nav-item dropdown">
               <a
@@ -62,15 +62,13 @@
                 Books
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="trending.html">Trending</a>
-                <a class="dropdown-item" href="newarrivals.html"
-                  >New Arrivals</a
-                >
-                <a class="dropdown-item" href="catalog.html">Full Catalog</a>
+                <a class="dropdown-item" href="#trending">Trending</a>
+                <a class="dropdown-item" href="#newArrivals">New Arrivals</a>
+                <a class="dropdown-item" href="#catalog">Full Catalog</a>
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contactus.html">Contact Us</a>
+              <a class="nav-link" href="#contactUs">Contact Us</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="addbooks.html">Admin Login</a>
@@ -81,21 +79,30 @@
     </nav>
 
     <!-- Landing Section -->
-    <header class="page-header gradient mb-5" id="home">
+    <header class="page-header gradient mb-5 mt-0 pt-5" id="home">
       <div class="container pt-3 text-center">
         <div class="row align-items-center justify-content-center">
           <div class="col-md-6">
             <h2>December 2020 Stock Is Here!!</h2>
             <p class="lead">Visit the No. 1 online bookstore in Sri Lanka</p>
-            <button type="button" class="btn btn-outline-warning btn-lg">
-              Trending
-            </button>
-            <button type="button" class="btn btn-outline-warning btn-lg">
-              New Arrivals
-            </button>
-            <button type="button" class="btn btn-outline-warning btn-lg">
-              Catalog
-            </button>
+            <a
+              href="./trending.html"
+              class="btn btn-outline-warning btn-lg"
+              role="button"
+              >Trending</a
+            >
+            <a
+              href="./newarrivals.html"
+              class="btn btn-outline-warning btn-lg"
+              role="button"
+              >New Arrivals</a
+            >
+            <a
+              href="./catalog.html"
+              class="btn btn-outline-warning btn-lg"
+              role="button"
+              >Catalog</a
+            >
           </div>
           <div class="col-md-6">
             <img
@@ -106,7 +113,7 @@
           </div>
         </div>
       </div>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 250">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 240">
         <path
           fill="#fff"
           fill-opacity="1"
@@ -116,7 +123,7 @@
     </header>
 
     <!--Trending Section-->
-    <section class="trending">
+    <section class="trending" id="trending">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12 text-center">
@@ -193,11 +200,16 @@
             </div>
           </div>
         </div>
+        <div class="row justify-content-center">
+          <a href="./trending.html" class="btn btn-warning btn-lg" role="button"
+            >View Trending</a
+          >
+        </div>
       </div>
     </section>
 
     <!-- New Books Section-->
-    <section class="newbooks gradient">
+    <section class="newbooks gradient" id="newArrivals">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#fff"
@@ -220,9 +232,12 @@
             <p class="lead">
               If you want to read the newest books, you are in the right place
             </p>
-            <button type="button" class="btn btn-outline-warning btn-lg">
-              New Arrivals
-            </button>
+            <a
+              href="./newarrivals.html"
+              class="btn btn-outline-warning btn-lg"
+              role="button"
+              >New Arrivals</a
+            >
           </div>
         </div>
       </div>
@@ -237,7 +252,7 @@
     </section>
 
     <!--Book Catalog Section-->
-    <section class="bookcatalog">
+    <section class="bookcatalog" id="catalog">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12 text-center">
@@ -551,15 +566,15 @@
           </div>
         </div>
         <div class="row justify-content-center mt-3">
-          <button type="button" class="btn btn-warning btn-lg">
-            View Full Catalog
-          </button>
+          <a href="./catalog.html" class="btn btn-warning btn-lg" role="button"
+            >View Catalog</a
+          >
         </div>
       </div>
     </section>
 
     <!-- Contact Us Section-->
-    <section class="contact gradient">
+    <section class="contact gradient" id="contactUs">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#fff"
@@ -601,9 +616,18 @@
                 rows="3"
               ></textarea>
             </div>
-            <button type="button" class="btn btn-outline-warning btn-lg">
+            <button
+              type="button"
+              class="btn btn-outline-warning btn-lg mr-1 mb-1"
+            >
               Send Message
             </button>
+            <a
+              href="./contactus.html"
+              class="btn btn-outline-warning btn-lg ml-1 mb-1"
+              role="button"
+              >Know More</a
+            >
           </div>
           <div class="col-md-6">
             <img
@@ -623,7 +647,7 @@
     </section>
 
     <!-- Footer Section -->
-    <footer class="">
+    <footer>
       <div class="container-fluid text-center">
         <div class="row">
           <div class="col-12">
@@ -673,6 +697,13 @@
       integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Loading Custom.js file -->
     <script src="./js/custom.js"></script>
+
+    <!-- Scroll Top Button Code -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <script type="text/javascript" src="./js/scrollTop.js"></script>
+    <!-- End of Scroll Top -->
   </body>
 </html>
