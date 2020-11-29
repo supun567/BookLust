@@ -102,7 +102,7 @@
       <div class="container pt-4 text-center">
         <div class="row align-items-center justify-content-center">
           <div class="col-12 mb-4">
-            <h2>Some books sell fast, so HURRY UP!!!!</h2>
+            <h2>Some Books Sell Fast, so HURRY UP!!!!</h2>
           </div>
         </div>
       </div>
@@ -141,6 +141,49 @@
       </div>
     </div>
 
+    <!-- Footer Section -->
+    <footer class="">
+      <div class="container-fluid text-center">
+        <div class="row">
+          <div class="col-12">
+            <!-- Social buttons -->
+            <div class="text-center center-block">
+              <p class="txt-railway">Connect With Us</p>
+              <a href="#"
+                ><i
+                  id="social-fb"
+                  class="fa fa-facebook-square fa-3x social"
+                ></i
+              ></a>
+              <a href="#"
+                ><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i
+              ></a>
+              <a href="#"
+                ><i
+                  id="social-gp"
+                  class="fa fa-google-plus-square fa-3x social"
+                ></i
+              ></a>
+              <a href="#contact"
+                ><i
+                  id="social-em"
+                  class="fa fa-envelope-square fa-3x social"
+                ></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-12">
+            <p class="text-muted">
+              Modern Web Application Development - SLIIT - Final Assignment -
+              MWAD20010002 - SH KANDAUDAHEWA
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
     <!--JQuery and bootstrap Scripts + Custom Script-->
     <script src="/js/jquery.min.js"></script>
     <script
@@ -172,10 +215,6 @@
           .get()
           .then(function (querySnapshot) {
             querySnapshot.forEach(function (doc) {
-              // doc.data() is never undefined for query doc snapshots
-              console.log(doc.id, " => ", doc.data());
-              console.log(doc.data().bName);
-
               // Adding new table rows for each item
               $("#catalogBody").append(
                 "<tr><td>" +

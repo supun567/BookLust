@@ -25,13 +25,13 @@
 
   <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="index.html"
+        <a class="navbar-brand" href="#home"
           ><img src="./images/logo1.png" style="width: 100px; height: 30px"
         /></a>
         <button
-          class="navbar-toggler"
+          class="navbar-toggler custom-toggler"
           type="button"
           data-toggle="collapse"
           data-target="#navbarSupportedContent"
@@ -70,7 +70,7 @@
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="contactus.html">Contact Us</a>
+              <a class="nav-link" href="contactus.html">Contact Us</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="addbooks.html">Admin Login</a>
@@ -85,7 +85,7 @@
       <div class="container pt-4 text-center">
         <div class="row align-items-center justify-content-center">
           <div class="col-12 mb-4">
-            <h2>Get in touch with us!!</h2>
+            <h2>You Can Find Us Here!!!</h2>
           </div>
         </div>
       </div>
@@ -100,8 +100,112 @@
 
     <!-- Contact Us Section -->
     <div class="container">
-      <div class="row my-3 align-items-center justify-content-center"></div>
+      <div
+        class="row my-3 align-items-center justify-content-center"
+        style="min-height: 500px"
+      >
+        <div class="col-sm-12">
+          <h5>Our Location</h5>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.34492623637!2d80.03120061532621!3d7.0859534183334665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2fdf0bfb6b90d%3A0xdc0ca04ee8dcd13!2sYakkala%20Junction!5e0!3m2!1sen!2slk!4v1606620540627!5m2!1sen!2slk"
+            style="border: 2px solid black"
+            height="600px"
+            width="100%"
+            allowfullscreen=""
+            aria-hidden="false"
+            tabindex="0"
+          ></iframe>
+        </div>
+      </div>
+      <div class="row my-3 align-items-center justify-content-center">
+        <div class="col-sm-12 col-md-6">
+          <p class="lead">
+            No: 66<br />Kandy Road, Yakkala, Sri Lanka <br />11033
+            <br />(Infront of Bank of Ceylon)
+          </p>
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <div class="mb-3 text-left">
+            <label class="form-label">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="yourname"
+              placeholder="your name"
+            />
+          </div>
+          <div class="mb-3 text-left">
+            <label class="form-label">E-Mail</label>
+            <input
+              type="email"
+              class="form-control"
+              id="youremail"
+              placeholder="your email address"
+            />
+          </div>
+          <div class="mb-3 text-left">
+            <label for="exampleFormControlTextarea1" class="form-label"
+              >Message</label
+            >
+            <textarea
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              placeholder="your message"
+              rows="3"
+            ></textarea>
+          </div>
+          <div class="row align-items-center justify-content-center">
+            <button type="button" class="btn btn-warning btn-lg">
+              Send Message
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- Footer Section -->
+    <footer class="">
+      <div class="container-fluid text-center">
+        <div class="row">
+          <div class="col-12">
+            <!-- Social buttons -->
+            <div class="text-center center-block">
+              <p class="txt-railway">Connect With Us</p>
+              <a href="#"
+                ><i
+                  id="social-fb"
+                  class="fa fa-facebook-square fa-3x social"
+                ></i
+              ></a>
+              <a href="#"
+                ><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i
+              ></a>
+              <a href="#"
+                ><i
+                  id="social-gp"
+                  class="fa fa-google-plus-square fa-3x social"
+                ></i
+              ></a>
+              <a href="#contact"
+                ><i
+                  id="social-em"
+                  class="fa fa-envelope-square fa-3x social"
+                ></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-12">
+            <p class="text-muted">
+              Modern Web Application Development - SLIIT - Final Assignment -
+              MWAD20010002 - SH KANDAUDAHEWA
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <!--JQuery and bootstrap Scripts + Custom Script-->
     <script src="/js/jquery.min.js"></script>

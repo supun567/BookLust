@@ -25,7 +25,7 @@
   </head>
   <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-custom">
       <div class="container">
         <a class="navbar-brand" href="#home"
           ><img src="./images/logo1.png" style="width: 100px; height: 30px"
@@ -62,15 +62,13 @@
                 Books
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="trending.html">Trending</a>
-                <a class="dropdown-item" href="newarrivals.html"
-                  >New Arrivals</a
-                >
-                <a class="dropdown-item" href="catalog.html">Full Catalog</a>
+                <a class="dropdown-item" href="#trending">Trending</a>
+                <a class="dropdown-item" href="#newArrivals">New Arrivals</a>
+                <a class="dropdown-item" href="#catalog">Full Catalog</a>
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contactus.html">Contact Us</a>
+              <a class="nav-link" href="#contactUs">Contact Us</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="addbooks.html">Admin Login</a>
@@ -116,7 +114,7 @@
     </header>
 
     <!--Trending Section-->
-    <section class="trending">
+    <section class="trending" id="trending">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12 text-center">
@@ -197,7 +195,7 @@
     </section>
 
     <!-- New Books Section-->
-    <section class="newbooks gradient">
+    <section class="newbooks gradient" id="newArrivals">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#fff"
@@ -237,7 +235,7 @@
     </section>
 
     <!--Book Catalog Section-->
-    <section class="bookcatalog">
+    <section class="bookcatalog" id="catalog">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12 text-center">
@@ -559,7 +557,7 @@
     </section>
 
     <!-- Contact Us Section-->
-    <section class="contact gradient">
+    <section class="contact gradient" id="contactUs">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#fff"
@@ -606,7 +604,10 @@
               class="btn btn-outline-warning btn-lg mr-1 mb-1"
             >
               Send Message</button
-            ><button type="button" class="btn btn-outline-warning btn-lg ml-1">
+            ><button
+              type="button"
+              class="btn btn-outline-warning btn-lg ml-1 mb-1"
+            >
               Know More
             </button>
           </div>
@@ -628,7 +629,7 @@
     </section>
 
     <!-- Footer Section -->
-    <footer class="">
+    <footer>
       <div class="container-fluid text-center">
         <div class="row">
           <div class="col-12">
@@ -679,5 +680,9 @@
       crossorigin="anonymous"
     ></script>
     <script src="./js/custom.js"></script>
+    <!-- Scroll Top Button Code -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <script type="text/javascript" src="./js/scrollTop.js"></script>
+    <!-- End of Scroll Top -->
   </body>
 </html>

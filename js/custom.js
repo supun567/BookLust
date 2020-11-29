@@ -61,3 +61,5 @@ function loginUser() {
     }
   }
 }
+
+// Script to scroll to top
