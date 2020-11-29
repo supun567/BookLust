@@ -24,6 +24,36 @@
   </head>
 
   <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html"
+          ><img src="./images/logo1.png" style="width: 120px; height: 30px"
+        /></a>
+        <button
+          class="navbar-toggler custom-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">Home</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
     <!-- Top Wave -->
     <div class="gradient">
       <div class="container pt-3 text-center">
@@ -222,7 +252,6 @@
       integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
       crossorigin="anonymous"
     ></script>
-    <script src="./js/custom.js"></script>
 
     <!-- Firebase Setup -->
     <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -263,25 +292,50 @@
       });
 
       function writeData() {
-        var db = firebase.firestore();
+        // Check whether all text boxes are filled properly -- else return false
 
-        db.collection("books")
-          .add({
-            bName: document.getElementById("bookname").value.trim(),
-            bAuthor: document.getElementById("author").value.trim(),
-            bDescription: document.getElementById("description").value.trim(),
-            bPrice: document.getElementById("price").value.trim(),
-            bISBN: document.getElementById("isbn").value.trim(),
-            bGenre: document.getElementById("genre").value.trim(),
-            bType: document.getElementById("type").value.trim(),
-          })
-          .then(function (docRef) {
-            console.log("Document written with ID: ", docRef.id);
-          })
-          .catch(function (error) {
-            console.error("Error adding document: ", error);
-          });
+        if (
+          document.getElementById("bookname").value == "" ||
+          document.getElementById("author").value == "" ||
+          document.getElementById("description").value == "" ||
+          document.getElementById("price").value == "" ||
+          document.getElementById("isbn").value == "" ||
+          document.getElementById("genre").value == "" ||
+          document.getElementById("type").value == ""
+        ) {
+          alert("Please Fill All The Details To Proceed Further!!!");
+          return false;
+        } else {
+          var db = firebase.firestore();
+
+          db.collection("books")
+            .add({
+              bName: document.getElementById("bookname").value.trim(),
+              bAuthor: document.getElementById("author").value.trim(),
+              bDescription: document.getElementById("description").value.trim(),
+              bPrice: document.getElementById("price").value.trim(),
+              bISBN: document.getElementById("isbn").value.trim(),
+              bGenre: document.getElementById("genre").value.trim(),
+              bType: document.getElementById("type").value.trim(),
+            })
+            .then(function (docRef) {
+              alert("Document written with ID: ", docRef.id);
+              this.document.getElementById("addbooks").reset();
+            })
+            .catch(function (error) {
+              alert(error);
+              console.error("Error adding document: ", error);
+            });
+        }
       }
     </script>
+
+    <!-- Loading Custom.js file -->
+    <script src="./js/custom.js"></script>
+
+    <!-- Scroll Top Button Code -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <script type="text/javascript" src="./js/scrollTop.js"></script>
+    <!-- End of Scroll Top -->
   </body>
 </html>

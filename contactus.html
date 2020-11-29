@@ -25,10 +25,10 @@
 
   <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-custom">
       <div class="container">
-        <a class="navbar-brand" href="#home"
-          ><img src="./images/logo1.png" style="width: 100px; height: 30px"
+        <a class="navbar-brand" href="./index.html"
+          ><img src="./images/logo1.png" style="width: 120px; height: 30px"
         /></a>
         <button
           class="navbar-toggler custom-toggler"
@@ -46,8 +46,8 @@
           id="navbarSupportedContent"
         >
           <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#home">Home</a>
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">Home</a>
             </li>
             <li class="nav-item dropdown">
               <a
@@ -62,18 +62,18 @@
                 Books
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="trending.html">Trending</a>
-                <a class="dropdown-item" href="newarrivals.html"
+                <a class="dropdown-item" href="./trending.html">Trending</a>
+                <a class="dropdown-item" href="./newarrivals.html"
                   >New Arrivals</a
                 >
-                <a class="dropdown-item" href="catalog.html">Full Catalog</a>
+                <a class="dropdown-item" href="./catalog.html">Full Catalog</a>
               </div>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contactus.html">Contact Us</a>
+            <li class="nav-item active">
+              <a class="nav-link" href="./contactus.html">Contact Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="addbooks.html">Admin Login</a>
+              <a class="nav-link" href="./addbooks.html">Admin Login</a>
             </li>
           </ul>
         </div>
@@ -81,7 +81,7 @@
     </nav>
 
     <!-- Top Wave -->
-    <div class="gradient mt-5">
+    <div class="gradient">
       <div class="container pt-4 text-center">
         <div class="row align-items-center justify-content-center">
           <div class="col-12 mb-4">
@@ -214,6 +214,13 @@
       integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Loading Custom.js file -->
     <script src="./js/custom.js"></script>
+
+    <!-- Scroll Top Button Code -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <script type="text/javascript" src="./js/scrollTop.js"></script>
+    <!-- End of Scroll Top -->
   </body>
 </html>
