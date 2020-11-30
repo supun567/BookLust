@@ -216,29 +216,18 @@
           .get()
           .then(function (querySnapshot) {
             querySnapshot.forEach(function (doc) {
+              this.document.getElementById("bookDetailsModalLabel").innerHTML =
+                doc.data().bName + " By " + doc.data().bAuthor;
               $("#bookDetailsBody").append(
-                "<p>" +
-                  doc.data().bName +
-                  "</p><br><p> " +
-                  doc.data().bAuthor +
-                  "</p><br><p> " +
-                  doc.data().bPrice +
-                  "</p><br><p> " +
-                  doc.data().bISBN +
-                  "</p><br><p> " +
-                  doc.data().bGenre +
-                  "</p><br><p>  " +
-                  doc.data().bType +
-                  "</p><br><p>" +
-                  doc.data().bDescription +
-                  "</p>"
-                  console.log()
+                "<p>" + doc.data().bDescription + "</p>"
               );
+              $("#bookDetails").modal();
             });
           })
           .catch(function (error) {
             console.error("Error adding document: ", error);
           });
+        this.document.getElementById("bookDetailsBody").innerHTML = "";
       }
     </script>
 
@@ -294,15 +283,17 @@
       id="bookDetails"
       tabindex="-1"
       role="dialog"
-      aria-labelledby="bookDetailsxampleModalLabel"
+      aria-labelledby="bookDetailsModalLabel"
       aria-hidden="true"
     >
       <div class="modal-dialog" role="document">
-        <div class="modal-content">
+        <div class="modal-content" style="text-align: justify">
           <div class="modal-header">
-            <h5 class="modal-title" id="bookDetailsxampleModalLabel">
-              Book Details
-            </h5>
+            <h5
+              class="modal-title"
+              style="color: rgb(31, 31, 213); font-weight: 900"
+              id="bookDetailsModalLabel"
+            ></h5>
             <button
               type="button"
               class="close"
