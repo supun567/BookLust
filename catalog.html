@@ -181,6 +181,7 @@
             querySnapshot.forEach(function (doc) {
               // doc.data() is never undefined for query doc snapshots
               // Adding new table rows for each item
+
               $("#catalogBody").append(
                 "<tr><td>" +
                   doc.data().bName +
@@ -192,7 +193,43 @@
                   doc.data().bISBN +
                   "</td><td>" +
                   doc.data().bGenre +
-                  '</td><td class="text-center"><button class="btn btn-warning btn-sm">More..</button></td></tr>'
+                  '</td><td class="text-center"><button class="btn btn-warning btn-sm" id="' +
+                  doc.data().bISBN +
+                  '" onclick="myFunction(this.id)">More..</button></td></tr>'
+              );
+            });
+          })
+          .catch(function (error) {
+            console.error("Error adding document: ", error);
+          });
+      }
+    </script>
+    <!-- Test Script -->
+    <script>
+      function myFunction(isbn) {
+        var db = firebase.firestore();
+
+        db.collection("books")
+          .where("bISBN", "==", isbn)
+          .get()
+          .then(function (querySnapshot) {
+            querySnapshot.forEach(function (doc) {
+              $("#bookDetailsBody").append(
+                "<p>" +
+                  doc.data().bName +
+                  "</p><br><p> " +
+                  doc.data().bAuthor +
+                  "</p><br><p> " +
+                  doc.data().bPrice +
+                  "</p><br><p> " +
+                  doc.data().bISBN +
+                  "</p><br><p> " +
+                  doc.data().bGenre +
+                  "</p><br><p>  " +
+                  doc.data().bType +
+                  "</p><br><p>" +
+                  doc.data().bDescription +
+                  "</p>"
               );
             });
           })
@@ -245,6 +282,36 @@
         </div>
       </div>
     </footer>
+
+    <!-- Details Modal -->
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="bookDetails"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="bookDetailsxampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="bookDetailsxampleModalLabel">
+              Book Details
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="bookDetailsBody"></div>
+        </div>
+      </div>
+    </div>
 
     <!-- Loading Custom.js file -->
     <script src="./js/custom.js"></script>
