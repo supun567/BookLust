@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <title>BookLust</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- bootstrap css from cdn-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <!-- font awesome cdn-->
+    <link rel="stylesheet" href="./css/font-awesome.min.css" />
+    <!-- Your custom style sheets-->
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html"
+          ><img src="./images/logo1.png" style="width: 120px; height: 30px"
+        /></a>
+        <button
+          class="navbar-toggler custom-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#books"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Books
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#trending">Trending</a>
+                <a class="dropdown-item" href="#newArrivals">New Arrivals</a>
+                <a class="dropdown-item" href="#catalog">Full Catalog</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contactUs">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="addbooks.html">Admin Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Landing Section -->
+    <header class="page-header gradient mb-5 mt-0 pt-5" id="home">
+      <div class="container pt-3 text-center">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-6 mb-1">
+            <h2>December 2020 Stock Is Here!!</h2>
+            <p class="lead">Visit the No. 1 online bookstore in Sri Lanka</p>
+            <a
+              href="./trending.html"
+              class="btn btn-outline-warning btn-lg mb-1"
+              role="button"
+              >Trending</a
+            >
+            <a
+              href="./newarrivals.html"
+              class="btn btn-outline-warning btn-lg mb-1"
+              role="button"
+              >New Arrivals</a
+            >
+            <a
+              href="./catalog.html"
+              class="btn btn-outline-warning btn-lg mb-1"
+              role="button"
+              >Catalog</a
+            >
+          </div>
+          <div class="col-md-6">
+            <img
+              class=""
+              src="./images/reading_a_book_monochromatic.svg"
+              alt="Reading Book"
+            />
+          </div>
+        </div>
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 240">
+        <path
+          fill="#fff"
+          fill-opacity="1"
+          d="M0,128L48,117.3C96,107,192,85,288,80C384,75,480,85,576,112C672,139,768,181,864,181.3C960,181,1056,139,1152,122.7C1248,107,1344,117,1392,122.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+        ></path>
+      </svg>
+    </header>
+
+    <!--Trending Section-->
+    <section class="trending" id="trending">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 text-center">
+            <h2>Trending</h2>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-6 col-md-3">
+            <div class="card mb-3 shadow border-primary">
+              <div class="inner">
+                <span class="badge badge-pill badge-primary">Trending</span>
+                <img
+                  class="card-img-top"
+                  src="./images/cards/1.PNG"
+                  alt="Card image cap"
+                />
+              </div>
+              <div class="card-body text-center">
+                <p class="card-text">Only the trying by Alex Cook</p>
+                <p class="text-muted">Rs.695.00</p>
+                <a class="btn btn-warning" href="#" role="button">Buy Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card mb-3 shadow border-primary">
+              <div class="inner">
+                <span class="badge badge-pill badge-primary">Trending</span>
+                <img
+                  class="card-img-top"
+                  src="./images/cards/4.PNG"
+                  alt="Card image cap"
+                />
+              </div>
+              <div class="card-body text-center">
+                <p class="card-text">Daring Greatly by Adam Neal</p>
+                <p class="text-muted">Rs.875.00</p>
+                <a class="btn btn-warning" href="#" role="button">Buy Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card mb-3 shadow border-primary">
+              <div class="inner">
+                <span class="badge badge-pill badge-primary">Trending</span>
+                <img
+                  class="card-img-top"
+                  src="./images/cards/2.PNG"
+                  alt="Card image cap"
+                />
+              </div>
+              <div class="card-body text-center">
+                <p class="card-text">Smoothies by Debra Jacobson</p>
+                <p class="text-muted">Rs.1295.00</p>
+                <a class="btn btn-warning" href="#" role="button">Buy Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card mb-3 shadow border-primary">
+              <div class="inner">
+                <span class="badge badge-pill badge-primary">Trending</span>
+                <img
+                  class="card-img-top"
+                  src="./images/cards/5.PNG"
+                  alt="Card image cap"
+                />
+              </div>
+              <div class="card-body text-center">
+                <p class="card-text">Rising Strong by Brene Brown</p>
+                <p class="text-muted">Rs.1960.00</p>
+                <a class="btn btn-warning" href="#" role="button">Buy Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <a href="./trending.html" class="btn btn-warning btn-lg" role="button"
+            >View Trending</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- New Books Section-->
+    <section class="newbooks gradient" id="newArrivals">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path
+          fill="#fff"
+          fill-opacity="1"
+          d="M0,224L48,213.3C96,203,192,181,288,154.7C384,128,480,96,576,117.3C672,139,768,213,864,208C960,203,1056,117,1152,101.3C1248,85,1344,139,1392,165.3L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+        ></path>
+      </svg>
+      <div class="container text-center">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-6">
+            <img
+              class=""
+              src="./images/book_lover_monochromatic.svg"
+              alt="Reading Book"
+              style="max-height: 40vh"
+            />
+          </div>
+          <div class="col-md-6">
+            <h2>Are You Excited!!</h2>
+            <p class="lead">
+              If you want to read the newest books, you are in the right place
+            </p>
+            <a
+              href="./newarrivals.html"
+              class="btn btn-outline-warning btn-lg"
+              role="button"
+              >New Arrivals</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 210">
+        <path
+          fill="#fff"
+          fill-opacity="1"
+          d="M0,96L34.3,106.7C68.6,117,137,139,206,122.7C274.3,107,343,53,411,53.3C480,53,549,107,617,117.3C685.7,128,754,96,823,96C891.4,96,960,128,1029,154.7C1097.1,181,1166,203,1234,202.7C1302.9,203,1371,181,1406,170.7L1440,160L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"
+        ></path>
+      </svg>
+    </section>
+
+    <!--Book Catalog Section-->
+    <section class="bookcatalog" id="catalog">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 text-center">
+            <h2>Available Books</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <div class="accordion" id="accordionExample">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button
+                      class="btn btn-link"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#collapseOne"
+                      aria-expanded="true"
+                      aria-controls="collapseOne"
+                    >
+                      Harry Potter and the Chamber of Secrets
+                    </button>
+                  </h2>
+                </div>
+
+                <div
+                  id="collapseOne"
+                  class="collapse show"
+                  aria-labelledby="headingOne"
+                  data-parent="#accordionExample"
+                >
+                  <div class="card-body">
+                    <p>
+                      Harry Potter and the Chamber of Secrets is a fantasy novel
+                      written by British author J. K. Rowling and the second
+                      novel in the Harry Potter series. The plot follows Harry's
+                      second year at Hogwarts School of Witchcraft and Wizardry,
+                      during which a series of messages on the walls of the
+                      school's corridors warn that the "Chamber of Secrets" has
+                      been opened and that the "heir of Slytherin" would kill
+                      all pupils who do not come from all-magical families.
+                      These threats are found after attacks that leave residents
+                      of the school petrified. Throughout the year, Harry and
+                      his friends Ron and Hermione investigate the attacks.
+                    </p>
+                    <br />
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h2 class="mb-0">
+                    <button
+                      class="btn btn-link collapsed"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#collapseTwo"
+                      aria-expanded="false"
+                      aria-controls="collapseTwo"
+                    >
+                      All Flee!
+                    </button>
+                  </h2>
+                </div>
+                <div
+                  id="collapseTwo"
+                  class="collapse"
+                  aria-labelledby="headingTwo"
+                  data-parent="#accordionExample"
+                >
+                  <div class="card-body">
+                    Humans! Beware the three-toed tread of All Flee! 32-pages of
+                    monster-sized city-trampling shenanigans, all wrapped up in
+                    a cool comic-sized format! Run! As ancient jokes long
+                    thought dead are brought back from the depths to terrorize
+                    comic-reading kind once more!
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <button
+                      class="btn btn-link collapsed"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#collapseThree"
+                      aria-expanded="false"
+                      aria-controls="collapseThree"
+                    >
+                      Highway Man
+                    </button>
+                  </h2>
+                </div>
+                <div
+                  id="collapseThree"
+                  class="collapse"
+                  aria-labelledby="headingThree"
+                  data-parent="#accordionExample"
+                >
+                  <div class="card-body">
+                    “A bewitching and fascinating roadtrip… with impeccable
+                    writing and narration.” — Planete BD<br />
+                    “Shadmi intrigues with his mysteries and his evocative
+                    skill, asking more questions than he answers.” — BoDoï
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingFour">
+                  <h2 class="mb-0">
+                    <button
+                      class="btn btn-link collapsed"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#collapseFour"
+                      aria-expanded="false"
+                      aria-controls="collapseFour"
+                    >
+                      Spook Country
+                    </button>
+                  </h2>
+                </div>
+                <div
+                  id="collapseFour"
+                  class="collapse"
+                  aria-labelledby="headingFour"
+                  data-parent="#accordionExample"
+                >
+                  <div class="card-body">
+                    Multilingual Tito engages in sensitive information transfers
+                    from his single-room warehouse apartment, while
+                    investigative journalist Hollis frets over his start-up
+                    magazine's censure of its own promotions, and prescription
+                    drug addict Milgrim wonders about the military connections
+                    of an enigmatic benefactor. 250,000 first printing.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6">
+            <div class="accordion" id="accordionExample2">
+              <div class="card">
+                <div class="card-header" id="headingFive">
+                  <h2 class="mb-0">
+                    <button
+                      class="btn btn-link"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#collapseFive"
+                      aria-expanded="true"
+                      aria-controls="collapseFive"
+                    >
+                      Attack of the Clones: The Visual DictionaryTM
+                    </button>
+                  </h2>
+                </div>
+
+                <div
+                  id="collapseFive"
+                  class="collapse show"
+                  aria-labelledby="headingFive"
+                  data-parent="#accordionExample2"
+                >
+                  <div class="card-body">
+                    Star Wars: Episode II -- The Saga Continues... Marks the
+                    return of fan-favorite Dr. David West Reynolds as author,
+                    whose background as a professor of archaeology and deep
+                    knowledge of Star Wars informs the "pseudo-scientific"
+                    writing style that has become the hallmark of DK's Star Wars
+                    titles. Highlights the new array of characters, including:
+                    Anakin Skywalker, Obi-Wan Kenobi, Padme Amidala, Mace Windu,
+                    Count Dooku, also the young Boba Fett, plus new bounty
+                    hunters, battle droids, clone troopers and some major new
+                    species.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingSix">
+                  <h2 class="mb-0">
+                    <button
+                      class="btn btn-link"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#collapseSix"
+                      aria-expanded="true"
+                      aria-controls="collapseSix"
+                    >
+                      The Riddle
+                    </button>
+                  </h2>
+                </div>
+
+                <div
+                  id="collapseSix"
+                  class="collapse"
+                  aria-labelledby="headingSix"
+                  data-parent="#accordionExample2"
+                >
+                  <div class="card-body">
+                    Maerad is a girl with a tragic and bitter past, but her
+                    powers grow stronger by the day. Now she and her mentor,
+                    Cadvan, hunted by both the Light and the Dark, must unravel
+                    the Riddle of the Treesong before their fractured kingdom
+                    erupts in chaos. The quest leads Maerad over terrifying seas
+                    and vast stretches of glacial wilderness, ever closer to the
+                    seductive Winterking -- ally of her most powerful enemy, the
+                    Nameless One
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingSeven">
+                  <h2 class="mb-0">
+                    <button
+                      class="btn btn-link"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#collapseSeven"
+                      aria-expanded="true"
+                      aria-controls="collapseSeven"
+                    >
+                      Minority Report
+                    </button>
+                  </h2>
+                </div>
+
+                <div
+                  id="collapseSeven"
+                  class="collapse"
+                  aria-labelledby="headingSeven"
+                  data-parent="#accordionExample2"
+                >
+                  <div class="card-body">
+                    Viewed by many as the greatest science fiction writer on any
+                    planet, Philip K. Dick has written some of the most
+                    intriguing, original and thought-provoking fiction of our
+                    time. Now a major feature film, Minority Report tells the
+                    story of a less than reliable special unit which employs
+                    those with the power of precognition to fight crime before
+                    it happens.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingEight">
+                  <h2 class="mb-0">
+                    <button
+                      class="btn btn-link"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#collapseEight"
+                      aria-expanded="true"
+                      aria-controls="collapseEight"
+                    >
+                      Anything We Love Can Be Saved
+                    </button>
+                  </h2>
+                </div>
+
+                <div
+                  id="collapseEight"
+                  class="collapse"
+                  aria-labelledby="headingEight"
+                  data-parent="#accordionExample2"
+                >
+                  <div class="card-body">
+                    America's beloved author of The Color Purplewrites here
+                    about her life as an activist, in a book rich in belief in
+                    the world as savable, if only we will act on our beliefs.
+                    Here are a superb writer's thoughts on politics, culture,
+                    feminism, race, religion, raising a daughter, writing and
+                    living.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center mt-3">
+          <a href="./catalog.html" class="btn btn-warning btn-lg" role="button"
+            >View Catalog</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Us Section-->
+    <section class="contact gradient" id="contactUs">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path
+          fill="#fff"
+          fill-opacity="1"
+          d="M0,224L48,213.3C96,203,192,181,288,154.7C384,128,480,96,576,117.3C672,139,768,213,864,208C960,203,1056,117,1152,101.3C1248,85,1344,139,1392,165.3L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+        ></path>
+      </svg>
+      <div class="container text-center" id="contactus">
+        <div class="row"></div>
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-6">
+            <h2>Drop a Message, We Will Get Back to You..</h2>
+            <div class="mb-3 text-left">
+              <label class="form-label">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="yourname"
+                placeholder="your name"
+              />
+            </div>
+            <div class="mb-3 text-left">
+              <label class="form-label">E-Mail</label>
+              <input
+                type="email"
+                class="form-control"
+                id="youremail"
+                placeholder="your email address"
+              />
+            </div>
+            <div class="mb-3 text-left">
+              <label for="exampleFormControlTextarea1" class="form-label"
+                >Message</label
+              >
+              <textarea
+                class="form-control"
+                id="exampleFormControlTextarea1"
+                placeholder="your message"
+                rows="3"
+              ></textarea>
+            </div>
+            <button
+              type="button"
+              class="btn btn-outline-warning btn-lg mr-1 mb-1"
+            >
+              Send Message
+            </button>
+            <a
+              href="./contactus.html"
+              class="btn btn-outline-warning btn-lg ml-1 mb-1"
+              role="button"
+              >Know More</a
+            >
+          </div>
+          <div class="col-md-6">
+            <img
+              src="./images/sending_emails_monochromatic.svg"
+              alt="Contact image"
+            />
+          </div>
+        </div>
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 210">
+        <path
+          fill="#fff"
+          fill-opacity="1"
+          d="M0,96L34.3,106.7C68.6,117,137,139,206,122.7C274.3,107,343,53,411,53.3C480,53,549,107,617,117.3C685.7,128,754,96,823,96C891.4,96,960,128,1029,154.7C1097.1,181,1166,203,1234,202.7C1302.9,203,1371,181,1406,170.7L1440,160L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"
+        ></path>
+      </svg>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+      <div class="container-fluid text-center">
+        <div class="row">
+          <div class="col-12">
+            <!-- Social buttons -->
+            <div class="text-center center-block">
+              <p class="txt-railway">Connect With Us</p>
+              <a href="#"
+                ><i
+                  id="social-fb"
+                  class="fa fa-facebook-square fa-3x social"
+                ></i
+              ></a>
+              <a href="#"
+                ><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i
+              ></a>
+              <a href="#"
+                ><i
+                  id="social-gp"
+                  class="fa fa-google-plus-square fa-3x social"
+                ></i
+              ></a>
+              <a href="#contact"
+                ><i
+                  id="social-em"
+                  class="fa fa-envelope-square fa-3x social"
+                ></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-12">
+            <p class="text-muted">
+              Modern Web Application Development - SLIIT - Final Assignment -
+              MWAD20010002 - SH KANDAUDAHEWA
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!--JQuery and bootstrap Scripts + Custom Script-->
+    <script src="/js/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Loading Custom.js file -->
+    <script src="./js/custom.js"></script>
+
+    <!-- Scroll Top Button Code -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <script type="text/javascript" src="./js/scrollTop.js"></script>
+    <!-- End of Scroll Top -->
+  </body>
+</html>
