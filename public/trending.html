@@ -40,7 +40,9 @@
     ></script>
   </head>
 
+
   <body>
+
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-custom">
       <div class="container">
@@ -135,7 +137,9 @@
                 <th class="th-sm" data-field="bPrice">Price</th>
                 <th class="th-sm" data-field="bISBN">ISBN</th>
                 <th class="th-sm" data-field="bGenre">Genre</th>
+
                 <th class="th-sm" data-field="bMore">Read More</th>
+
               </tr>
             </thead>
             <tbody id="catalogBody"></tbody>
@@ -143,7 +147,9 @@
         </div>
       </div>
     </div>
+
     <!-- End of Trending Book Catalog Section -->
+
 
     <!-- Footer Section -->
     <footer class="">
@@ -188,6 +194,7 @@
         </div>
       </div>
     </footer>
+
 
     <!-- Modal Section -->
     <!-- Book Details Modal -->
@@ -247,6 +254,7 @@
       integrity="sha512-t6Sh/zpgdIfOQu4/mH8QUhK85SIU6t6pOI5eGcgHugj6k4m5S2tb96X6GKKa7b4fR9nV0tPOVpqbwPU6gaT6vQ=="
       crossorigin="anonymous"
     ></script>
+
     <!-- Firebase Script -->
     <script>
       var firebaseConfig = {
@@ -293,7 +301,7 @@
     <!-- Load Books -->
 
     <script>
-      function loadBookDetails(isbn, price) {
+      function loadBookDetails(isbn) {
         var db = firebase.firestore();
 
         db.collection("books")
@@ -307,24 +315,27 @@
                 "<p>" + doc.data().bDescription + "</p>"
               );
               $("#bookDetails").modal();
+
+    
             });
           })
           .catch(function (error) {
             console.error("Error adding document: ", error);
           });
+
         this.document.getElementById("bookDetailsBody").innerHTML = "";
       }
     </script>
     <!-- End of Load Books -->
 
     <!--JQuery and bootstrap Scripts + Custom Script-->
-    <script src="./js/jquery.min.js"></script>
+    
+<script src="./js/jquery.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
       crossorigin="anonymous"
     ></script>
-
     <!-- Loading Custom.js file -->
     <script src="./js/custom.js"></script>
 
