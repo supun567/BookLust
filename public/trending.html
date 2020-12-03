@@ -40,7 +40,9 @@
     ></script>
   </head>
 
-  <body onload="getData()">
+
+  <body>
+
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-custom">
       <div class="container">
@@ -118,6 +120,7 @@
     </div>
 
     <!-- Trending Section -->
+
     <div class="container-fluid">
       <div class="row my-3 align-items-center justify-content-center">
         <div class="col-12 table-responsive">
@@ -134,7 +137,9 @@
                 <th class="th-sm" data-field="bPrice">Price</th>
                 <th class="th-sm" data-field="bISBN">ISBN</th>
                 <th class="th-sm" data-field="bGenre">Genre</th>
-                <th class="th-sm" data-field="bView">Read More</th>
+
+                <th class="th-sm" data-field="bMore">Read More</th>
+
               </tr>
             </thead>
             <tbody id="catalogBody"></tbody>
@@ -142,6 +147,9 @@
         </div>
       </div>
     </div>
+
+    <!-- End of Trending Book Catalog Section -->
+
 
     <!-- Footer Section -->
     <footer class="">
@@ -186,6 +194,50 @@
         </div>
       </div>
     </footer>
+
+
+    <!-- Modal Section -->
+    <!-- Book Details Modal -->
+    <div
+      class="modal fade"
+      id="bookDetails"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="bookDetailsModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content" style="text-align: justify">
+          <div class="modal-header">
+            <h5
+              class="modal-title"
+              style="color: rgb(31, 31, 213); font-weight: 900"
+              id="bookDetailsModalLabel"
+            ></h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="bookDetailsBody"></div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-warning"
+              onclick="alert('You will be redirected to the cart')"
+            >
+              Buy Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of Custom Modal -->
+
     <!--JQuery and bootstrap Scripts + Custom Script-->
     <script src="/js/jquery.min.js"></script>
     <script
@@ -202,43 +254,88 @@
       integrity="sha512-t6Sh/zpgdIfOQu4/mH8QUhK85SIU6t6pOI5eGcgHugj6k4m5S2tb96X6GKKa7b4fR9nV0tPOVpqbwPU6gaT6vQ=="
       crossorigin="anonymous"
     ></script>
+
+    <!-- Firebase Script -->
     <script>
-      firebase.initializeApp({
+      var firebaseConfig = {
         apiKey: "AIzaSyBxIIu7gfBqen_rrU_Njz-Rln2Qd4ikm4I",
         authDomain: "booklust-6dcb9.firebaseapp.com",
+        databaseURL: "https://booklust-6dcb9.firebaseio.com",
         projectId: "booklust-6dcb9",
-      });
+        storageBucket: "booklust-6dcb9.appspot.com",
+        messagingSenderId: "535184426604",
+        appId: "1:535184426604:web:509f1113c346c3dc493a49",
+        measurementId: "G-PKFKK8NWT4",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
 
-      function getData() {
+      const db = firebase.firestore();
+      const tableBody = this.document.getElementById("catalogBody");
+      const fbtable = db.collection("books").where("bType", "==", "Trending");
+
+      fbtable.get().then((snapshot) => {
+        var content = "";
+
+        snapshot.docs.forEach(
+          (doc) => {
+            var tbRow = doc.data();
+
+            let html = `<tr>
+            <td>${tbRow.bName}</td>
+            <td>${tbRow.bAuthor}</td>
+            <td>${tbRow.bPrice}</td>
+            <td>${tbRow.bISBN}</td>
+            <td>${tbRow.bGenre}</td>
+            <td class="text-center"><button class="btn btn-warning btn-sm" id= ${tbRow.bISBN} onclick="loadBookDetails(this.id)">More..</button></td>
+            </tr>`;
+            content += html;
+            tableBody.innerHTML = content;
+          },
+          (error) => {
+            console.log(error.message);
+          }
+        );
+      });
+    </script>
+    <!-- Load Books -->
+
+    <script>
+      function loadBookDetails(isbn) {
         var db = firebase.firestore();
 
         db.collection("books")
-          .where("bType", "==", "Trending")
+          .where("bISBN", "==", isbn)
           .get()
           .then(function (querySnapshot) {
             querySnapshot.forEach(function (doc) {
-              // Adding new table rows for each item
-              $("#catalogBody").append(
-                "<tr><td>" +
-                  doc.data().bName +
-                  "</td><td> " +
-                  doc.data().bAuthor +
-                  "</td><td>" +
-                  doc.data().bPrice +
-                  "</td><td>" +
-                  doc.data().bISBN +
-                  "</td><td>" +
-                  doc.data().bGenre +
-                  '</td><td class="text-center"><button class="btn btn-warning btn-sm">More..</button></td></tr>'
+              this.document.getElementById("bookDetailsModalLabel").innerHTML =
+                doc.data().bName + " By " + doc.data().bAuthor;
+              $("#bookDetailsBody").append(
+                "<p>" + doc.data().bDescription + "</p>"
               );
+              $("#bookDetails").modal();
+
+    
             });
           })
           .catch(function (error) {
             console.error("Error adding document: ", error);
           });
+
+        this.document.getElementById("bookDetailsBody").innerHTML = "";
       }
     </script>
+    <!-- End of Load Books -->
 
+    <!--JQuery and bootstrap Scripts + Custom Script-->
+    
+<script src="./js/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
     <!-- Loading Custom.js file -->
     <script src="./js/custom.js"></script>
 

@@ -65,13 +65,15 @@ body {
   color: white;
 }
 
-/* .card {
+
+.card {
+
   color: rgb(6, 6, 68);
 }
 
 #catalog {
   color: rgb(6, 6, 68);
-} */
+
 
 .form-container {
   position: absolute;
