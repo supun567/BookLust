@@ -139,7 +139,6 @@
                 <th class="th-sm" data-field="bISBN">ISBN</th>
                 <th class="th-sm" data-field="bGenre">Genre</th>
                 <th class="th-sm" data-field="bMore">Read More</th>
-                <!-- <th class="th-sm" data-field="bView">Read More</th> -->
               </tr>
             </thead>
             <tbody id="catalogBody"></tbody>
@@ -148,6 +147,7 @@
       </div>
     </div>
     <!-- End of Book Catalog Section -->
+
     <!--JQuery and bootstrap Scripts -->
     <script src="/js/jquery.min.js"></script>
     <script
@@ -209,7 +209,7 @@
       });
     </script>
 
-    <!-- Test Script -->
+    <!-- Load Books -->
     <script>
       function loadBookDetails(isbn, price) {
         var db = firebase.firestore();
@@ -233,6 +233,7 @@
         this.document.getElementById("bookDetailsBody").innerHTML = "";
       }
     </script>
+    <!-- End of Load Books -->
 
     <!-- Footer Section -->
     <footer class="">
