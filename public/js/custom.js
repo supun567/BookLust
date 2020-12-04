@@ -61,5 +61,3 @@ function loginUser() {
     }
   }
 }
-
-// Display Modal
