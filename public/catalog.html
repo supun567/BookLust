@@ -15,7 +15,18 @@
 
     <link rel="stylesheet" href="./css/style.css" />
     <!-- font awesome cdn-->
-    <link rel="stylesheet" href="./css/font-awesome.min.css" />
+
+    <link
+      rel="stylesheet"
+
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+
+    />
+
     <!--Bootstrap table css  -->
     <link
       rel="stylesheet"
@@ -36,6 +47,7 @@
   </head>
 
   <body>
+
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-custom">
       <div class="container">
@@ -132,7 +144,9 @@
                 <th class="th-sm" data-field="bPrice">Price</th>
                 <th class="th-sm" data-field="bISBN">ISBN</th>
                 <th class="th-sm" data-field="bGenre">Genre</th>
+
                 <th class="th-sm" data-field="bMore">Read More</th>
+
               </tr>
             </thead>
             <tbody id="catalogBody"></tbody>
@@ -141,6 +155,7 @@
       </div>
     </div>
     <!-- End of Book Catalog Section -->
+
 
     <!--JQuery and bootstrap Scripts -->
     <script src="./js/jquery.min.js"></script>
@@ -164,6 +179,7 @@
 
     <!-- Firebase Script -->
     <script>
+
       var firebaseConfig = {
         apiKey: "AIzaSyBxIIu7gfBqen_rrU_Njz-Rln2Qd4ikm4I",
         authDomain: "booklust-6dcb9.firebaseapp.com",
@@ -193,7 +209,7 @@
             <td>${tbRow.bPrice}</td>
             <td>${tbRow.bISBN}</td>
             <td>${tbRow.bGenre}</td>
-            <td class="text-center"><button class="btn btn-warning btn-sm" id= ${tbRow.bISBN} onclick="loadBookDetails(this.id,${tbRow.bPrice})">More..</button></td>
+            <td class="text-center"><button class="btn btn-warning btn-sm" id= ${tbRow.bISBN} onclick="loadBookDetails(this.id)">More..</button></td>
             </tr>`;
             content += html;
             tableBody.innerHTML = content;
@@ -207,7 +223,49 @@
 
     <!-- Load Books -->
     <script>
-      function loadBookDetails(isbn, price) {
+      function loadBookDetails(isbn) {
+
+      firebase.initializeApp({
+        apiKey: "AIzaSyBxIIu7gfBqen_rrU_Njz-Rln2Qd4ikm4I",
+        authDomain: "booklust-6dcb9.firebaseapp.com",
+        projectId: "booklust-6dcb9",
+      });
+
+      function getData() {
+        var db = firebase.firestore();
+
+        db.collection("books")
+          .get()
+          .then(function (querySnapshot) {
+            querySnapshot.forEach(function (doc) {
+              // Adding new table rows for each item
+              $("#catalogBody").append(
+                "<tr><td>" +
+                  doc.data().bName +
+                  "</td><td> " +
+                  doc.data().bAuthor +
+                  "</td><td>" +
+                  doc.data().bPrice +
+                  "</td><td>" +
+                  doc.data().bISBN +
+                  "</td><td>" +
+                  doc.data().bGenre +
+                  '</td><td class="text-center"><button class="btn btn-warning btn-sm" id="' +
+                  doc.data().bISBN +
+                  '" onclick="loadBookDetails(this.id)">More..</button></td></tr>'
+              );
+            });
+          })
+          .catch(function (error) {
+            console.error("Error adding document: ", error);
+          });
+      }
+    </script>
+
+    <!-- Test Script -->
+    <script>
+      function loadBookDetails(isbn) {
+
         var db = firebase.firestore();
 
         db.collection("books")
@@ -229,7 +287,9 @@
         this.document.getElementById("bookDetailsBody").innerHTML = "";
       }
     </script>
+
     <!-- End of Load Books -->
+
 
     <!-- Footer Section -->
     <footer class="">
@@ -304,6 +364,7 @@
             </button>
           </div>
           <div class="modal-body" id="bookDetailsBody"></div>
+
           <div class="modal-footer">
             <button
               type="button"
@@ -313,17 +374,20 @@
               Buy Now
             </button>
           </div>
+
         </div>
       </div>
     </div>
     <!-- End of Custom Modal -->
 
     <!--JQuery and bootstrap Scripts + Custom Script-->
+
     <!--JQuery and bootstrap Scripts + Custom Script-->
     <script type="text/javascript" src="./js/jquery.min.js"></script>
     <script type="text/javascript" src="./js/popper.min.js"></script>
     <script type="text/javascript" src="./js/bootstrap.min.js"></script>
     <script type="text/javascript" src="./js/custom.js"></script>
+
 
     <!-- Scroll Top Button Code -->
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>

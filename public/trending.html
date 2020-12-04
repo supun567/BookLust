@@ -40,7 +40,9 @@
     ></script>
   </head>
 
+
   <body>
+
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-custom">
       <div class="container">
@@ -140,7 +142,9 @@
                 <th class="th-sm" data-field="bPrice">Price</th>
                 <th class="th-sm" data-field="bISBN">ISBN</th>
                 <th class="th-sm" data-field="bGenre">Genre</th>
+
                 <th class="th-sm" data-field="bMore">Read More</th>
+
               </tr>
             </thead>
             <tbody id="catalogBody"></tbody>
@@ -148,7 +152,9 @@
         </div>
       </div>
     </div>
+
     <!-- End of Trending Book Catalog Section -->
+
 
     <!-- Footer Section -->
     <footer class="">
@@ -193,6 +199,7 @@
         </div>
       </div>
     </footer>
+
 
     <!-- Modal Section -->
     <!-- Book Details Modal -->
@@ -302,7 +309,7 @@
     <!-- Load Books -->
 
     <script>
-      function loadBookDetails(isbn, price) {
+      function loadBookDetails(isbn) {
         var db = firebase.firestore();
 
         db.collection("books")
@@ -316,16 +323,25 @@
                 "<p>" + doc.data().bDescription + "</p>"
               );
               $("#bookDetails").modal();
+
+    
             });
           })
           .catch(function (error) {
             console.error("Error adding document: ", error);
           });
+
         this.document.getElementById("bookDetailsBody").innerHTML = "";
       }
     </script>
     <!-- End of Load Books -->
 
+ <!--JQuery and bootstrap Scripts + Custom Script-->
+
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/popper.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/custom.js"></script>
     <!-- Scroll Top Button Code -->
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <script type="text/javascript" src="./js/scrollTop.js"></script>
