@@ -123,6 +123,11 @@
 
     <div class="container-fluid">
       <div class="row my-3 align-items-center justify-content-center">
+        <div class="col-12">
+          <h3>Trending</h3>
+        </div>
+      </div>
+      <div class="row my-3 align-items-center justify-content-center">
         <div class="col-12 table-responsive">
           <table
             data-toggle="table"
@@ -239,12 +244,10 @@
     <!-- End of Custom Modal -->
 
     <!--JQuery and bootstrap Scripts + Custom Script-->
-    <script src="/js/jquery.min.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-      crossorigin="anonymous"
-    ></script>
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/popper.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/custom.js"></script>
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.js"></script>
@@ -257,7 +260,7 @@
 
     <!-- Firebase Script -->
     <script>
-      var firebaseConfig = {
+      var firebaseConfigTrending = {
         apiKey: "AIzaSyBxIIu7gfBqen_rrU_Njz-Rln2Qd4ikm4I",
         authDomain: "booklust-6dcb9.firebaseapp.com",
         databaseURL: "https://booklust-6dcb9.firebaseio.com",
@@ -268,7 +271,12 @@
         measurementId: "G-PKFKK8NWT4",
       };
       // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
+      if (firebase.apps.length === 0) {
+        firebase.initializeApp(firebaseConfigTrending);
+      } else {
+        console.log("Already Initializeed");
+      }
+      //
 
       const db = firebase.firestore();
       const tableBody = this.document.getElementById("catalogBody");
@@ -328,17 +336,12 @@
     </script>
     <!-- End of Load Books -->
 
-    <!--JQuery and bootstrap Scripts + Custom Script-->
-    
-<script src="./js/jquery.min.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Loading Custom.js file -->
-    <script src="./js/custom.js"></script>
+ <!--JQuery and bootstrap Scripts + Custom Script-->
 
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/popper.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/custom.js"></script>
     <!-- Scroll Top Button Code -->
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <script type="text/javascript" src="./js/scrollTop.js"></script>
