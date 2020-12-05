@@ -196,76 +196,6 @@
       </div>
     </footer>
 
-    <!-- Modal Section -->
-    <!-- Book Details Modal -->
-    <div
-      class="modal fade"
-      id="bookDetails"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="bookDetailsModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content" style="text-align: justify">
-          <div class="modal-header">
-            <h5
-              class="modal-title"
-              style="color: rgb(31, 31, 213); font-weight: 900"
-              id="bookDetailsModalLabel"
-            ></h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body" id="bookDetailsBody"></div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-warning"
-              onclick="alert('You will be redirected to the cart')"
-            >
-              Buy Now
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End of Custom Modal -->
-
-    <!--JQuery and bootstrap Scripts + Custom Script-->
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
-      integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
-      crossorigin="anonymous"
-    ></script>
-
-    <script type="text/javascript" src="./js/custom.js"></script>
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.js"></script>
-    <!-- Latest compiled and minified Locales -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.18.0/locale/bootstrap-table-en-US.min.js"
-      integrity="sha512-t6Sh/zpgdIfOQu4/mH8QUhK85SIU6t6pOI5eGcgHugj6k4m5S2tb96X6GKKa7b4fR9nV0tPOVpqbwPU6gaT6vQ=="
-      crossorigin="anonymous"
-    ></script>
-
     <!-- Firebase Script -->
     <script>
       var firebaseConfigTrending = {
@@ -284,7 +214,6 @@
       } else {
         console.log("Already Initializeed");
       }
-      //
 
       const db = firebase.firestore();
       const tableBody = this.document.getElementById("catalogBody");
@@ -340,7 +269,48 @@
         this.document.getElementById("bookDetailsBody").innerHTML = "";
       }
     </script>
-    <!-- End of Load Books -->
+
+    <!-- Modal Section -->
+    <!-- Book Details Modal -->
+    <div
+      class="modal fade"
+      id="bookDetails"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="bookDetailsModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content" style="text-align: justify">
+          <div class="modal-header">
+            <h5
+              class="modal-title"
+              style="color: rgb(31, 31, 213); font-weight: 900"
+              id="bookDetailsModalLabel"
+            ></h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="bookDetailsBody"></div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-warning"
+              onclick="alert('You will be redirected to the cart')"
+            >
+              Buy Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of Custom Modal -->
 
     <!--JQuery and bootstrap Scripts + Custom Script-->
 
@@ -348,6 +318,16 @@
     <script type="text/javascript" src="./js/popper.min.js"></script>
     <script type="text/javascript" src="./js/bootstrap.min.js"></script>
     <script type="text/javascript" src="./js/custom.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.js"></script>
+    <!-- Latest compiled and minified Locales -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.18.0/locale/bootstrap-table-en-US.min.js"
+      integrity="sha512-t6Sh/zpgdIfOQu4/mH8QUhK85SIU6t6pOI5eGcgHugj6k4m5S2tb96X6GKKa7b4fR9nV0tPOVpqbwPU6gaT6vQ=="
+      crossorigin="anonymous"
+    ></script>
+
     <!-- Scroll Top Button Code -->
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <script type="text/javascript" src="./js/scrollTop.js"></script>
